@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101025">
+
+  <meta name="description" content="Pixel Arcade — play seven retro-inspired browser games, chase high scores, and enjoy one more round.">
+
+  <title>Pixel Arcade — Insert Coin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Pixel Arcade home">
+      <span class="brand-icon">▣</span>
+      PIXEL<span>ARCADE</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">HOME</a>
+      <a href="#games" class="nav-link">GAMES</a>
+      <a href="#scores" class="nav-link">HIGH SCORES</a>
+    </nav>
+
+    <button
+      id="soundToggle"
+      class="small-button"
+      type="button"
+      aria-pressed="false"
+    >
+      ♫ SOUND: OFF
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="blink">●</span> PLAYER 1 READY
+        </p>
+
+        <h1>
+          INSERT<br>
+          <span class="pink">COIN</span><br>
+          TO PLAY<span class="cursor">_</span>
+        </h1>
+
+        <p class="hero-description">
+          Your pocket-sized arcade. Classic games, pixel-perfect vibes,
+          and one more round.
+        </p>
+
+        <a class="pixel-button primary" href="#games">
+          ▶ START PLAYING
+        </a>
+
+        <div class="hero-stats">
+          <div>
+            <strong id="heroGames">07</strong>
+            <span>ARCADE GAMES</span>
+          </div>
+
+          <div>
+            <strong id="heroBest">0000</strong>
+            <span>PERSONAL BEST</span>
+          </div>
+
+          <div>
+            <strong>1UP</strong>
+            <span>YOUR TURN</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DECORATIVE ARCADE MACHINE -->
+      <div class="arcade-machine" aria-label="Decorative retro arcade machine">
+        <div class="machine-top">
+          <span>PIXEL ARCADE</span>
+          <span class="machine-lights">● ● ●</span>
+        </div>
+
+        <div class="machine-screen">
+          <div class="stars">✦　 ·　 ✧　 ·　 ✦</div>
+
+          <div class="pixel-alien">
+            ▟▀▙　▟▀▙<br>
+            █●█　█●█<br>
+            ▜▄▛　▜▄▛
+          </div>
+
+          <div class="screen-title">
+            GAME<br>ON!
+          </div>
+
+          <div class="screen-ground">
+            ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰
+          </div>
+        </div>
+
+        <div class="machine-controls">
+          <span class="dpad">✥</span>
+          <span class="joystick"></span>
+          <span class="control-buttons">●　●</span>
+        </div>
+
+        <div class="machine-label">PRESS START</div>
+      </div>
+    </section>
+
+    <!-- GAME LINEUP -->
+    <section id="games" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SELECT YOUR GAME</p>
+          <h2>THE ARCADE <span class="cyan">LINEUP</span></h2>
+        </div>
+
+        <span class="section-index">[ 01 / 07 ]</span>
+      </div>
+
+      <div class="game-grid">
+
+        <!-- GAME 1: PIXEL SNAKE -->
+        <article class="game-card" data-game="snake">
+          <div class="game-art snake-art">
+            <span class="game-number">01</span>
+
+            <div class="snake-pixel">
+              ■ ■ ■<br>
+              　 ■ ■<br>
+              　　■
+            </div>
+
+            <span class="art-caption">EAT. GROW. REPEAT.</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>PIXEL SNAKE</h3>
+              <p>Classic snake, endless score chase.</p>
+            </div>
+
+            <span class="tag green">ARCADE</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="snake" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+        <!-- GAME 2: MEMORY FLIP -->
+        <article class="game-card" data-game="memory">
+          <div class="game-art memory-art">
+            <span class="game-number">02</span>
+
+            <div class="memory-icons">
+              ◆　★<br>
+              ♥　●
+            </div>
+
+            <span class="art-caption">MATCH THE PAIRS</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>MEMORY FLIP</h3>
+              <p>Find every matching pixel pair.</p>
+            </div>
+
+            <span class="tag purple">PUZZLE</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="memory" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+        <!-- GAME 3: REACTION RUSH -->
+        <article class="game-card" data-game="reaction">
+          <div class="game-art reaction-art">
+            <span class="game-number">03</span>
+            <div class="reaction-target">!</div>
+            <span class="art-caption">HOW FAST ARE YOU?</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>REACTION RUSH</h3>
+              <p>Wait for green. Tap as fast as you can.</p>
+            </div>
+
+            <span class="tag pink-tag">SPEED</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="reaction" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+        <!-- GAME 4: TIC-TAC-TOE -->
+        <article class="game-card" data-game="tictactoe">
+          <div class="game-art ttt-art">
+            <span class="game-number">04</span>
+
+            <div class="ttt-symbols">
+              X <span>O</span><br>
+              <span>O</span> X
+            </div>
+
+            <span class="art-caption">CHALLENGE THE CPU</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>NEON TIC-TAC-TOE</h3>
+              <p>Three in a row wins the round.</p>
+            </div>
+
+            <span class="tag orange">CLASSIC</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="tictactoe" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+        <!-- GAME 5: BUBBLES THE SWAN -->
+        <article class="game-card" data-game="swan">
+          <div class="game-art swan-art">
+            <span class="game-number">05</span>
+
+            <div class="game-character" aria-hidden="true">🦢</div>
+
+            <span class="art-caption">FLAP THROUGH THE SKY</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>BUBBLES THE SWAN</h3>
+              <p>Help Bubbles fly between the obstacles.</p>
+            </div>
+
+            <span class="tag pink-tag">FLYING</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="swan" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+        <!-- GAME 6: FLAPPY BIRD -->
+        <article class="game-card" data-game="flappy">
+          <div class="game-art flappy-art">
+            <span class="game-number">06</span>
+
+            <div class="game-character" aria-hidden="true">🐤</div>
+
+            <span class="art-caption">DON'T HIT THE PIPES</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>FLAPPY BIRD</h3>
+              <p>Tap to flap and beat your high score.</p>
+            </div>
+
+            <span class="tag orange">ARCADE</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="flappy" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+        <!-- GAME 7: CUP SHUFFLE -->
+        <article class="game-card" data-game="cup">
+          <div class="game-art cup-art">
+            <span class="game-number">07</span>
+
+            <div class="game-character cup-art-icons" aria-hidden="true">
+              🥤 🥤 🥤
+            </div>
+
+            <span class="art-caption">FIND THE HIDDEN BALL</span>
+          </div>
+
+          <div class="game-info">
+            <div>
+              <h3>CUP SHUFFLE</h3>
+              <p>Track the ball as the cups move faster.</p>
+            </div>
+
+            <span class="tag purple">PUZZLE</span>
+          </div>
+
+          <button class="pixel-button game-launch" data-open="cup" type="button">
+            PLAY GAME <span>↗</span>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- GAME PLAYER -->
+    <section id="play" class="section play-section hidden">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOW PLAYING</p>
+          <h2 id="playTitle">PIXEL SNAKE</h2>
+        </div>
+
+        <button id="closeGame" class="small-button" type="button">
+          ✕ CLOSE GAME
+        </button>
+      </div>
+
+      <div class="game-panel">
+        <div class="game-panel-top">
+          <span id="gameInstructions">
+            Use arrow keys or WASD to move.
+          </span>
+
+          <span class="score-label">
+            SCORE <strong id="currentScore">0000</strong>
+          </span>
+        </div>
+
+        <!-- PIXEL SNAKE -->
+        <div id="snakeWrap" class="game-stage hidden">
+          <canvas
+            id="snakeCanvas"
+            width="480"
+            height="360"
+            aria-label="Snake game board"
+            role="img"
+          ></canvas>
+
+          <div class="snake-stats">
+            <div class="snake-stat">
+              <span>BEST SCORE</span>
+              <strong id="snakeBestScore">0000</strong>
+            </div>
+
+            <div class="snake-stat">
+              <span>LEVEL</span>
+              <strong id="snakeLevel">1</strong>
+            </div>
+
+            <div class="snake-stat">
+              <span>SPEED</span>
+              <strong id="snakeSpeed">150 MS</strong>
+            </div>
+          </div>
+
+          <div class="stage-actions snake-actions">
+            <button id="snakeStart" class="pixel-button primary" type="button">
+              START GAME
+            </button>
+
+            <button id="snakePause" class="pixel-button" type="button">
+              PAUSE
+            </button>
+
+            <span>Move: Arrow keys / WASD</span>
+            <span>Pause: P / ESC</span>
+          </div>
+        </div>
+
+        <!-- MEMORY FLIP -->
+        <div id="memoryWrap" class="game-stage hidden">
+          <div id="memoryBoard" class="memory-board"></div>
+
+          <p id="memoryStatus" class="game-status">
+            Flip two cards to find a pair.
+          </p>
+
+          <button id="memoryRestart" class="pixel-button primary" type="button">
+            SHUFFLE &amp; RESTART
+          </button>
+        </div>
+
+        <!-- REACTION RUSH -->
+        <div id="reactionWrap" class="game-stage hidden">
+          <button id="reactionPad" class="reaction-pad" type="button">
+            PRESS START<br>
+            <small>Then wait for green...</small>
+          </button>
+
+          <p id="reactionStatus" class="game-status">
+            Your best reaction time will be saved.
+          </p>
+        </div>
+
+        <!-- TIC-TAC-TOE -->
+        <div id="tttWrap" class="game-stage hidden">
+          <div id="tttBoard" class="ttt-board"></div>
+
+          <p id="tttStatus" class="game-status">
+            You are X. The computer is O.
+          </p>
+
+          <button id="tttRestart" class="pixel-button primary" type="button">
+            NEW ROUND
+          </button>
+        </div>
+
+        <!-- BUBBLES THE SWAN: CREATED BY newgames.js -->
+        <div id="swanWrap" class="game-stage hidden"></div>
+
+        <!-- FLAPPY BIRD: CREATED BY newgames.js -->
+        <div id="flappyWrap" class="game-stage hidden"></div>
+
+        <!-- CUP SHUFFLE: CREATED BY newgames.js -->
+        <div id="cupShuffleWrap" class="game-stage hidden"></div>
+
+      </div>
+    </section>
+
+    <!-- HIGH SCORES -->
+    <section id="scores" class="section scores-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL RECORDS</p>
+          <h2>HIGH <span class="pink">SCORES</span></h2>
+        </div>
+
+        <span class="trophy" aria-hidden="true">🏆</span>
+      </div>
+
+      <div class="score-table">
+        <div class="score-row score-head">
+          <span>GAME</span>
+          <span>BEST SCORE / RECORD</span>
+          <span>STATUS</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot green-dot"></i> PIXEL SNAKE</span>
+          <strong id="snakeBest">0000</strong>
+          <span class="record-tag">PERSONAL BEST</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot purple-dot"></i> MEMORY FLIP</span>
+          <strong id="memoryBest">0000</strong>
+          <span class="record-tag">FEWEST MOVES</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot pink-dot"></i> REACTION RUSH</span>
+          <strong id="reactionBest">----</strong>
+          <span class="record-tag">FASTEST MS</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot orange-dot"></i> TIC-TAC-TOE</span>
+          <strong id="tttWins">0000</strong>
+          <span class="record-tag">WINS</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot pink-dot"></i> BUBBLES THE SWAN</span>
+          <strong id="swanBest">0000</strong>
+          <span class="record-tag">PERSONAL BEST</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot orange-dot"></i> FLAPPY BIRD</span>
+          <strong id="flappyBest">0000</strong>
+          <span class="record-tag">PERSONAL BEST</span>
+        </div>
+
+        <div class="score-row">
+          <span><i class="dot purple-dot"></i> CUP SHUFFLE</span>
+          <strong id="cupBest">0000</strong>
+          <span class="record-tag">PERSONAL BEST</span>
+        </div>
+      </div>
+
+      <button id="resetScores" class="text-button" type="button">
+        ↻ RESET ALL RECORDS
+      </button>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="brand footer-brand" href="#home">
+      ▣ PIXEL<span>ARCADE</span>
+    </a>
+
+    <p>BUILT FOR THE LOVE OF ONE MORE ROUND.</p>
+
+    <span>
+      © <span id="year"></span> PLAYER 1 · GAME ON
+    </span>
+  </footer>
+
+  <!-- NOTIFICATIONS -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- SCRIPTS: LOAD IN THIS ORDER -->
+  <script src="js/storage.js"></script>
+<script src="js/snake.js"></script>
+<script src="js/minigames.js"></script>
+<script src="js/newgames.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
